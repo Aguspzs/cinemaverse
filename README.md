@@ -2,7 +2,7 @@
 
 =======
 
-# Proyecto Angular con Firebase
+# Proyecto Ionic con Angular
 
 Este proyecto es una aplicación mobile construida con **Ionic 8** y **Angular 18**. La aplicación incluye funcionalidades básicas como autenticación, gestión de datos en tiempo real y operaciones CRUD a través de la integración con Firebase.
 
