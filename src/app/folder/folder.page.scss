@@ -26,3 +26,9 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+ion-list,
+ion-item {
+  --background: var(--ion-color-dark);
+  background: var(--ion-color-dark);
+}

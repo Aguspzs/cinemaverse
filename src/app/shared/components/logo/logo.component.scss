@@ -1,0 +1,42 @@
+.logo-wrapper {
+  padding: 24px;
+  margin: 5% 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-avatar {
+    height: 100px;
+    width: 100px;
+    background: var(--ion-color-primary);
+    border: 5px solid var(--ion-color-primary);
+  }
+  ion-button {
+    position: absolute;
+    top: 60%;
+    right: 40%;
+  }
+}
+ion-modal {
+  height: 100%;
+  ion-item {
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 12px;
+    --padding-top: 12px;
+    --inner-padding-end: 0;
+    --background: var(--ion-color-dark);
+    height: 10%;
+    ion-avatar {
+      height: 70px;
+      width: 70px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+.selected-logo {
+  --background: var(--ion-color-light) !important;
+  --color: var(--ion-color-dark) !important;
+}

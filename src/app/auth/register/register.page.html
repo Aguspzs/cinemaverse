@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true" color="dark">
+  <app-logo></app-logo>
+  <div class="title">
+    <h1>Register</h1>
+  </div>
+  <div class="login-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <ion-input color="medium" type="email" fill="solid" label="Email" labelPlacement="stacked" errorText="Ingresa tu email" errorText="Email Inválido" formControlName="email"></ion-input>
+      <ion-input color="medium" type="password" fill="solid" label="Password" labelPlacement="stacked" errorText="Ingresa tu contraseña" errorText="La contraseña debe tener mínimo 6 caracteres" formControlName="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+      <ion-button type="submit">Register</ion-button>
+      <ion-button fill="clear" color="primary" (click)="goToLogin()">Already have an account? Login</ion-button>
+    </form>
+  </div>
+</ion-content>

@@ -1,20 +1,27 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonItem, IonLabel, IonIcon, IonList } from '@ionic/angular/standalone';
+import { CardComponent } from '../shared/components/card/card.component';
+import { Movie } from '../shared/interfaces/movie.interface';
+import { FirestoreService } from '../shared/services/firestore.service';
 
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent],
+  imports: [IonList, IonIcon, IonLabel, IonItem, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, CardComponent],
 })
 export class FolderPage implements OnInit {
-  public folder!: string;
-  private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
-
-  ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+  public movies: Movie[] = [];
+  constructor(private firestore: FirestoreService) {}
+  ngOnInit(): void {
+    this.firestore.getMovies().subscribe({
+      next: (value) => {
+        this.movies = value;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

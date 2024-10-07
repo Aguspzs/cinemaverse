@@ -1,0 +1,22 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-chip>
+        @if(currentLogo){
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" [src]="currentLogo.user.picture" />
+        </ion-avatar>
+        }
+        <ion-label>{{ user.email }} </ion-label>
+      </ion-chip>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-menu-toggle>
+      <ion-item routerDirection="root" lines="none" detail="false" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Log out</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>

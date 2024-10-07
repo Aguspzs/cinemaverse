@@ -1,0 +1,19 @@
+.login-container {
+  padding: 24px;
+}
+form {
+  width: 100%;
+}
+ion-button {
+  width: 100%;
+}
+ion-input {
+  --border-color: var(--ion-color-light);
+  margin-bottom: 15%;
+}
+.title {
+  padding: 0 24px;
+  h1 {
+    font-weight: 700;
+  }
+}

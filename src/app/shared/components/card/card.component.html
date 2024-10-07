@@ -1,0 +1,24 @@
+<ion-item-sliding>
+  <ion-item lines="none" class="ion-no-padding">
+    <ion-card>
+      <div class="img-wrapper" (click)="openDetail()">
+        <img alt="Movie image" [src]="movie.img ? movie.img : 'https://ionicframework.com/docs/img/demos/card-media.png'" />
+      </div>
+      <div class="text-wrapper">
+        <ion-card-header>
+          <ion-card-title> {{ movie.title | slice : 0 : 20 }}{{ movie.title.length > 20 ? '...' : '' }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ movie.description | slice : 0 : 200 }}{{ movie.description.length > 200 ? '...' : '' }} </ion-card-content>
+        <div class="stars-button">
+          <h5>Rate</h5>
+          <app-stars-button [rating]="movie.rating" (ratingChange)="ratingChange($event)"></app-stars-button>
+        </div>
+      </div>
+    </ion-card>
+  </ion-item>
+  <ion-item-options>
+    <ion-item-option color="primary" (click)="openEdit()">Editar</ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+<app-modal-edit #editMovie [movie]="movie"></app-modal-edit>
+<app-modal-detail #detailMovie [movie]="movie"></app-modal-detail>
