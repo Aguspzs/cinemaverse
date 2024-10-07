@@ -1,8 +1,6 @@
-# cinemaverse
+# Cinemaverse
 
-=======
-
-# Proyecto Ionic con Angular
+## Proyecto Ionic con Angular
 
 Este proyecto es una aplicación mobile construida con **Ionic 8** y **Angular 18**. La aplicación incluye funcionalidades básicas como autenticación, gestión de datos en tiempo real y operaciones CRUD a través de la integración con Firebase.
 
@@ -35,8 +33,8 @@ Antes de comenzar, asegúrate de tener instalados los siguientes elementos:
 1. **Clona el repositorio:**
 
    ```bash
-   git clone <URL-del-repositorio>
-   cd nombre-del-proyecto
+   git clone https://github.com/Aguspzs/cinemaverse
+   cd cinemaverse
 
    ```
 
@@ -49,7 +47,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes elementos:
 
 ## Configuración
 
-Para mantener segura la API_KEY de Firebase y no incluirla en el código fuente, se utiliza un script para generar el archivo de entorno environment.ts en el directorio src/environments de Angular.
+Para mantener segura la API_KEY de Firebase y no incluirla en el código fuente, se utiliza un script para generar el archivo de entorno **environment.ts** en el directorio src/environments de Angular.
 
 **Configuración de la API Key**
 
