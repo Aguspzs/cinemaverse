@@ -1,0 +1,12 @@
+ion-list {
+  --background: var(--ion-color-dark);
+}
+ion-item {
+  --background: var(--ion-color-dark);
+  margin-bottom: 10px;
+}
+ion-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+}

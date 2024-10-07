@@ -1,0 +1,7 @@
+<div class="stars-wrapper">
+  @for (star of stars; track star){
+  <ion-button size="small" fill="clear" (click)="rate(star)">
+    <ion-icon slot="icon-only" [name]="star <= rating ? 'star' : 'star-outline'"></ion-icon>
+  </ion-button>
+  }
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "cinemaverse",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

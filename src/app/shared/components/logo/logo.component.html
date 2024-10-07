@@ -1,0 +1,38 @@
+<ion-item lines="none" color="dark">
+  <div class="logo-wrapper">
+    @if(currentLogo){
+    <ion-avatar>
+      <img [alt]="currentLogo.user.name.first" [src]="currentLogo.user.picture" />
+    </ion-avatar>
+    }
+
+    <ion-button size="small" (click)="openModal(true)" [disabled]="loading">
+      <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-item>
+
+<ion-modal [isOpen]="isOpen">
+  <ng-template>
+    <ion-content>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button color="primary" (click)="openModal(false)">Close</ion-button>
+        </ion-buttons>
+        <ion-title>Choose an avatar</ion-title>
+      </ion-toolbar>
+      <ion-list color="dark">
+        @for(logo of allLogos; track logo.user.sha1){
+        <ion-item (click)="changeLogo(logo)" [ngClass]="{ 'selected-logo': logo.user.sha1 === currentLogo?.user?.sha1 }">
+          <ion-avatar slot="start">
+            <ion-img [src]="logo.user.picture"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ logo.user.name.title }} {{ logo.user.name.first }} {{ logo.user.name.last }}</h2>
+          </ion-label>
+        </ion-item>
+        }
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>
